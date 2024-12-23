@@ -97,12 +97,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests for 
 
 ---
 
-## 📜 License
 
-This project is licensed under the [MIT License](./LICENSE).
-
----
-
-## 📧 Contact
-
-For inquiries, reach out at [your-email@example.com](mailto:your-email@example.com).
