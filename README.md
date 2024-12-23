@@ -11,3 +11,10 @@ The **React-7Days** challenge is designed to:
 - Create a collection of small, focused React projects
 
 
+## Projects
+
+| Day | Project Name      | Description                                     | Key Concepts Covered             |
+|-----|-------------------|-------------------------------------------------|----------------------------------|
+| 1   | Todo App          | A simple todo app with CRUD functionality.      | Components, State, Props, Redux  |
+
+
