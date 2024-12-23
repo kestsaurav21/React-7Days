@@ -1,58 +1,50 @@
-import { ADD_TODO, FILTER_TODOS, MARK_ALL_COMPLETED, MARK_COMPLETED, MARK_UNCOMPLETED, REMOVE_TODO, TOGGLE_TODO, UPDATE_SEARCH } from "./actionTypes"
+// actions.js
+import {
+  ADD_TODO,
+  TOGGLE_TODO,
+  REMOVE_TODO,
+  MARK_COMPLETED,
+  MARK_INCOMPLETE,
+  FILTER_TODOS,
+  MARK_ALL_COMPLETED,
+  UPDATE_SEARCH_TERM,
+} from './actionTypes';
 
+export const addTodo = (text) => ({
+  type: ADD_TODO,
+  payload: { text },
+});
 
-export const addTodo = (taskName) => {
-  return {
-    type: ADD_TODO,
-    payload: {taskName},
-  }
-}
+export const toggleTodo = (id) => ({
+  type: TOGGLE_TODO,
+  payload: { id },
+});
 
-export const toggleTodo = (id) => {
+export const removeTodo = (id) => ({
+  type: REMOVE_TODO,
+  payload: { id },
+});
 
-    return {
-        type: TOGGLE_TODO,
-        payload: {id},
-    }
-}
+export const markCompleted = (id) => ({
+  type: MARK_COMPLETED,
+  payload: { id },
+});
 
-export const removeTodo = (id) => {
-    return {
-        type: REMOVE_TODO,
-        payload: {id},
-    }
-}
+export const markIncomplete = (id) => ({
+  type: MARK_INCOMPLETE,
+  payload: { id },
+});
 
-export const markCompleted = (id) => {
-    return {
-        type: MARK_COMPLETED,
-        payload: {id},
-    }
-}
+export const filterTodos = (filter) => ({
+  type: FILTER_TODOS,
+  payload: { filter },
+});
 
-export const markUncompleted = (id) => {
-   return {
-       type: MARK_UNCOMPLETED,
-       payload: {id},
-   }
-}
+export const markAllCompleted = () => ({
+  type: MARK_ALL_COMPLETED,
+});
 
-export const filterTodos = (filter) => {
-  return {
-    type: FILTER_TODOS,
-    payload: {filter},
-  }
-}
-
-export const markAllCompleted = () => {
-  return {
-    type: MARK_ALL_COMPLETED,
-  }
-}
-
-export const updateSearch = (searchTerm) => {
-  return {
-    type: UPDATE_SEARCH,
-    payload: {searchTerm},
-  }
-}
+export const updateSearchTerm = (searchTerm) => ({
+  type: UPDATE_SEARCH_TERM,
+  payload: { searchTerm },
+});
