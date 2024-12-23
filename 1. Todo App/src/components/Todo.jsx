@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addTodo, updateSearch } from '../redux/actions';
+import { addTodo, updateSearchTerm } from '../redux/actions';
 import { IoSearchSharp } from "react-icons/io5";
+import FilterButton from './FilterButton';
+import TodoList from './TodoList';
 
 const Todo = () => {
+
+
 
   const dispatch = useDispatch()
 
@@ -11,27 +15,24 @@ const Todo = () => {
 
   const [ searchTerm, setSearchTerm ] = useState('')
 
-  const handleAddTodo = () => {
-    dispatch(addTodo(taskName))
-    setTaskName('')
-  }
+  const handleAddTodo = (text) => {
+    dispatch(addTodo(text));
+  };
 
   const handleAddTodoClick = () => {
-
     if (taskName.trim() !== '') {
-      handleAddTodo()
+      handleAddTodo(taskName);
+      setTaskName('');
     }
-  }
+  };
 
   const handleSearch = (value) => {
-    setSearchTerm(value)
-    dispatch(updateSearch(value))
-
-
-  }
+    setSearchTerm(value);
+    dispatch(updateSearchTerm(value));
+  };
 
   return (
-    <div className='max-w-3xl mx-auto sm:mt-8 p-4 bg-slate-800 rounded'>
+    <div className='max-w-4xl mx-auto sm:mt-8 p-4 bg-slate-800 rounded'>
         <h2 className='text-2xl text-white text-center uppercase mt-3 mb-6 font-bold '>Todo Application</h2>
 
         {/* input text and button  */}
@@ -52,26 +53,32 @@ const Todo = () => {
 
         {/* filter and search */}
 
-        <div className='mt-8 flex  justify-end items-center'>
+        <div className='mt-8 flex items-center justify-between '>
+
+          <FilterButton  />
+
+           
 
           <div className='flex items-center justify-center mb-4 gap-5 '>
-          <input 
-            className=' p-2  border-2 border-white rounded-md focus:outline-none focus:border-blue-500' 
-            type="text" 
-            placeholder='Search Here ...'
-            name='searchTerm'
-            id='searchTerm'
-            value={searchTerm}
-            onChange={(e) => handleSearch(e.target.value)}
-            />
-          
-          <button className='bg-black p-3 text-white font-bold text-2xl rounded-md cursor-pointer hover:scale-110 transition-all duration-900 focus:outline-none focus:border-2 border-white'>
-            <IoSearchSharp className='text-white text-2xl' />
-          </button>
+            <input 
+              className=' p-2  border-2 border-white rounded-md focus:outline-none focus:border-blue-500' 
+              type="text" 
+              placeholder='Search Here ...'
+              name='searchTerm'
+              id='searchTerm'
+              value={searchTerm}
+              onChange={(e) => handleSearch(e.target.value)}
+              />
+            
+            <button className='bg-black p-3 text-white font-bold text-2xl rounded-md cursor-pointer hover:scale-110 transition-all duration-900 focus:outline-none focus:border-2 border-white'>
+              <IoSearchSharp className='text-white text-2xl' />
+            </button>
           </div>
          
 
         </div>
+
+        <TodoList />
 
     </div>
   )
