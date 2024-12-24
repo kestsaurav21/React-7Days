@@ -1,8 +1,29 @@
-# React + Vite
+# Counter Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Counter Application built using **React** and **Redux** to demonstrate state management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Increment the counter.
+- Decrement the counter.
+- Display the current value of the counter.
+
+---
+
+## Demo
+
+![Counter App Demo](./src/assets/image.png)  
+
+
+---
+
+## Technologies Used
+
+- **React**: For building the user interface.
+- **Redux**: For state management.
+- **React-Redux**: For integrating Redux with React.
+
+---
+
+
+
